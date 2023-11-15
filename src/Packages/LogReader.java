@@ -36,8 +36,6 @@ public class LogReader {
             while ( (line = reader.readLine()) != null ) {
                 processLine(line);
             }
-            //System.out.println(PackageManager.getPackageManager().getMethods().toString());
-            System.out.println(PackageManager.getPackageManager().getPackages());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {

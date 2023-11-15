@@ -9,7 +9,7 @@ import java.util.Date;
  */
 public class HTTP_Package implements Comparable{
     private String ip;          // "127.0.0.1"
-    private LocalDateTime date;          // "07/Nov/2016:11:35:01"
+    private LocalDateTime date;     // "07/Nov/2016:11:35:01"
     private Method method;      // Instance of the class Method
     private String headerTitle; // "/admin/index.php"
     private String version;     // "HTTP/1.1"
