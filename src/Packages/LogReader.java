@@ -120,7 +120,7 @@ public class LogReader {
         //System.out.println(localDateTime);
         PackageManager.getPackageManager().addMethod(new Method(methodName, methodNumber));
 
-        HTTP_Package newPackage = new HTTP_Package(ip, localDateTime, PackageManager.getPackageManager().getMethods().get(methodNumber), methodNumber, methodName, port, dns, userAgent);
+        HTTP_Package newPackage = new HTTP_Package(ip, localDateTime, PackageManager.getPackageManager().getMethods().get(methodNumber), methodHeader, "1.1", port, dns, userAgent);
          PackageManager.getPackageManager().addPackage(newPackage);
     }
 }
