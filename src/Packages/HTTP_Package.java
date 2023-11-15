@@ -135,4 +135,15 @@ public class HTTP_Package implements Comparable{
     public int compareTo(Object o) {
         return this.getDate().compareTo(((HTTP_Package)o).getDate());
     }
+
+    /** Default toString
+     * 
+     */
+    @Override
+    public String toString() {
+        return "HTTP_Package [ip=" + ip + ", date=" + date + ", method=" + method + ", headerTitle=" + headerTitle
+                + ", version=" + version + ", port=" + port + ", dns=" + dns + ", userAgent=" + userAgent + "]";
+    }
+
+    
 }
