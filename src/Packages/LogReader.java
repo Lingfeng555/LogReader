@@ -5,13 +5,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Locale;
-
-import javax.xml.crypto.Data;
 
 public class LogReader {
     private File lofFile;
@@ -40,6 +36,8 @@ public class LogReader {
             while ( (line = reader.readLine()) != null ) {
                 processLine(line);
             }
+            //System.out.println(PackageManager.getPackageManager().getMethods().toString());
+            System.out.println(PackageManager.getPackageManager().getPackages());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -121,9 +119,10 @@ public class LogReader {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMM/yyyy:HH:mm:ss", Locale.ENGLISH);
         LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
-        System.out.println(localDateTime);
+        //System.out.println(localDateTime);
         PackageManager.getPackageManager().addMethod(new Method(methodName, methodNumber));
 
-        HTTP_Package newPackage = new HTTP_Package(ip, null, null, methodNumber, methodName, port, dns, userAgent);
+        HTTP_Package newPackage = new HTTP_Package(ip, localDateTime, PackageManager.getPackageManager().getMethods().get(methodNumber), methodNumber, methodName, port, dns, userAgent);
+         PackageManager.getPackageManager().addPackage(newPackage);
     }
 }

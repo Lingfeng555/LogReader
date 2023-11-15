@@ -1,6 +1,7 @@
 package Packages;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 /** This class create a instance of the package that is registered in the log file,
  *  it used basic datatypes of java.util.*
@@ -8,7 +9,7 @@ import java.util.Date;
  */
 public class HTTP_Package implements Comparable{
     private String ip;          // "127.0.0.1"
-    private LocalDate date;          // "07/Nov/2016:11:35:01"
+    private LocalDateTime date;          // "07/Nov/2016:11:35:01"
     private Method method;      // Instance of the class Method
     private String headerTitle; // "/admin/index.php"
     private String version;     // "HTTP/1.1"
@@ -27,7 +28,7 @@ public class HTTP_Package implements Comparable{
      * @param dns   Domain name
      * @param userAgent UserAgent device
      */
-    public HTTP_Package(String ip, LocalDate date, Method method, String headerTitle, String version, String port, String dns, String userAgent) {
+    public HTTP_Package(String ip, LocalDateTime date, Method method, String headerTitle, String version, String port, String dns, String userAgent) {
         this.ip = ip;
         this.date = date;
         this.method = method;
@@ -40,7 +41,7 @@ public class HTTP_Package implements Comparable{
 
     //Getters
     public String getIp() {return ip;}
-    public LocalDate getDate() {return date;}
+    public LocalDateTime getDate() {return date;}
     public Method getMethod() {return method;}
     public String getHeaderTitle() {return headerTitle;}
     public String getVersion() {return version;}
@@ -50,7 +51,7 @@ public class HTTP_Package implements Comparable{
 
     //Setters
     public void setIp(String ip) {this.ip = ip;}
-    public void setDate(LocalDate date) {this.date = date;}
+    public void setDate(LocalDateTime date) {this.date = date;}
     public void setMethod(Method method) {this.method = method;}
     public void setHeaderTitle(String headerTitle) {this.headerTitle = headerTitle;}
     public void setVersion(String version) {this.version = version;}

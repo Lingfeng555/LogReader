@@ -26,5 +26,8 @@ public class PackageManager {
         }
     }
 
+    public HashMap<String, Method> getMethods() {return this.methods;}
+    public HashMap<String, TreeSet<HTTP_Package>> getPackages(){return this.ipPackagesMap;}
+
     public static PackageManager getPackageManager(){return packageManager;}
 }
