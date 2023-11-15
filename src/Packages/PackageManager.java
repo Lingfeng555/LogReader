@@ -7,8 +7,9 @@ import java.util.TreeSet;
 public class PackageManager {
     private HashMap<String, TreeSet<HTTP_Package>> ipPackagesMap = new HashMap<>(); // Key = IPAddress, value = sortedPackagesSet
     private static PackageManager packageManager = new PackageManager();
-    private HashMap<String, Method> methods; // key = methodCode; value = method
-    public PackageManager(){packageManager = this;}
+    private HashMap<String, Method> methods = new HashMap<>(); // key = methodCode; value = method
+
+    private PackageManager(){packageManager = this;}
 
     public boolean addMethod(Method method){
         if(methods.containsKey(method.getCode())){return false;}
@@ -24,4 +25,6 @@ public class PackageManager {
             addPackage(newPackage);
         }
     }
+
+    public static PackageManager getPackageManager(){return packageManager;}
 }

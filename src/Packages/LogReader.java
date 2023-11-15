@@ -5,6 +5,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Locale;
+
+import javax.xml.crypto.Data;
 
 public class LogReader {
     private File lofFile;
@@ -112,6 +119,11 @@ public class LogReader {
         }
         //System.out.println(userAgent);
 
-        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MMM/yyyy:HH:mm:ss", Locale.ENGLISH);
+        LocalDateTime localDateTime = LocalDateTime.parse(date, formatter);
+        System.out.println(localDateTime);
+        PackageManager.getPackageManager().addMethod(new Method(methodName, methodNumber));
+
+        HTTP_Package newPackage = new HTTP_Package(ip, null, null, methodNumber, methodName, port, dns, userAgent);
     }
 }
